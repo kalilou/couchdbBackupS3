@@ -40,7 +40,8 @@ class CouchUtilWrapper(object):
             >>> python couchdb-backup-s3 couchdb_backup config.json
     """
 
-    def __init__(self, config):
+    def __init__(self, config=None):
+        config = config or {}
         self.rotation_max = config.get('rotation_max', 7)
         self.bucket_name = config.get('s3-bucket-name', 'couch-backup-bucket')
         self.couchdb_file_path = config.get('file_path', '/opt/tripwell/data/couchdb')
