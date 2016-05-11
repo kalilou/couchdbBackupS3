@@ -100,7 +100,7 @@ class CouchUtilWrapper(object):
     def download_backup(self, backup_name):
         s3_client = boto3.client('s3')
         log.info('Download {} from s3'.format(backup_name))
-        s3_client.download_file(self.bucket_name, backup_name, "couchdb.tar.gz")
+        s3_client.download_file(self.bucket_name, backup_name, "{}/couchdb.tar.gz".format(self.couchdb_file_path))
 
     def negociate_rotation_num(self):
         if not self.redis_cli.exists(self.redis_key):
