@@ -1,5 +1,6 @@
 # couchdb-backup-s3
 
+## Tripwell use case
 
 ## How it works
 `couchdb-backup-3` is a program that can be run manually or as crontab to
@@ -32,3 +33,9 @@ But before you can run it, you need to have the config.json file i.e:
     }
 }
 ```
+
+You will also need to install the python required packages, I will suggest to created a python virtualenv
+* Install pip if it is not installed
+* Install virtualenv if it is not installed i.e ```shell sudo pip install virtualenv```
+* Clone this project
+* Create the virtualenv ```shell virtualenv path_to_this_prject```
