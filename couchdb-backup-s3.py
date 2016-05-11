@@ -130,6 +130,12 @@ def cli():
 
 
 @cli.command()
+@click.argument('backup_file')
+def restore_backup(backup_file):
+    pass
+
+
+@cli.command()
 @click.argument('config')
 def couchdb_backup(config):
     log.info('Starting the backup')
