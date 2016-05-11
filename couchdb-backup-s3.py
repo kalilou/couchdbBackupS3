@@ -1,3 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+    couchdb-backup-s3
+    ~~~~~
+
+    couchdb-backup-s3 is a simple python code for a couchdb rotational backup to s3
+
+    :copyright: (c) 2016 by Tripwell Sweden AB.
+    :license: Not decided  yet
+"""
+
 import sys
 import json
 import click
@@ -15,6 +26,19 @@ log = logging.getLogger(u'Couchdb::backup')
 
 
 class CouchUtilWrapper(object):
+    """ Class wrapper for setting the basic properties from the config
+        Basic properties:
+            :param rotation_max: Maximum backup rotation
+            :param bucket_name: AWS s3 bucket name which stores the backups
+            :param couchdb_file_path: Location to the couchdb db files
+            :param redis_db: Redis db number (default to 0)
+            :param redis_port: Redis port number (default to 6379)
+            :param redis_host: Redis host address (default to localhost)
+            :param redis_key: Redis key used for the rotation
+
+        Basic usage (assuming you have the config file setup and the aws credential and config files)
+            >>> python couchdb-backup-s3 couchdb_backup config.json
+    """
 
     def __init__(self, config):
         self.rotation_max = config.get('rotation_max', 7)
