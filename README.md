@@ -36,6 +36,20 @@ But before you can run it, you need to have the config.json file i.e:
 
 You will also need to install the python required packages, I will suggest to created a python virtualenv
 * Install pip if it is not installed
-* Install virtualenv if it is not installed i.e ```shell sudo pip install virtualenv```
+* Install virtualenv if it is not installed i.e `sudo pip install virtualenv`
 * Clone this project
-* Create the virtualenv ```shell virtualenv path_to_this_prject```
+* Create the virtualenv `virtualenv path_to_this_project`
+* Inside the project `source bin/activate`
+* And run pip install -r requirements.txt
+
+
+
+# Setup aws credential
+Since we are using aws api via python package boto3, you will need to setup the aws credentials and config under the user home directory
+
+* Create credentials file under ~/.aws/credentials
+`
+[default]
+aws_access_key_id = Your-aws-access-key-id
+aws_secret_access_key = Your-aws-secret-access-key
+`
