@@ -48,8 +48,8 @@ You will also need to install the python required packages, I will suggest to cr
 Since we are using aws api via python package boto3, you will need to setup the aws credentials and config under the user home directory
 
 * Create credentials file under ~/.aws/credentials
-`
+```
 [default]
 aws_access_key_id = Your-aws-access-key-id
 aws_secret_access_key = Your-aws-secret-access-key
-`
+```
