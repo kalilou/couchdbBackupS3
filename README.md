@@ -40,7 +40,7 @@ You will also need to install the python required packages, I will suggest to cr
 * Clone this project
 * Create the virtualenv `virtualenv path_to_this_project`
 * Inside the project `source bin/activate`
-* And run pip install -r requirements.txt
+* And run `pip install -r requirements.txt`
 
 
 
