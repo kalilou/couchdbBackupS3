@@ -97,6 +97,11 @@ class CouchUtilWrapper(object):
         obj = self.bucket.Object(self.couchdb_tarfile)
         obj.upload_file(self.couchdb_tarfile)
 
+    def download_backup(self, backup_name):
+        s3_client = boto3.client('s3')
+        log.info('Download {} from s3'.format(backup_name))
+        s3_client.download_file(self.bucket_name, backup_name, "couchdb.tar.gz")
+
     def negociate_rotation_num(self):
         if not self.redis_cli.exists(self.redis_key):
             self.redis_cli.set(self.redis_key, 0)
@@ -133,7 +138,8 @@ def cli():
 @cli.command()
 @click.argument('backup_file')
 def restore_backup(backup_file):
-    pass
+    couch_wrapper = CouchUtilWrapper()
+    couch_wrapper.download_backup(backup_file)
 
 
 @cli.command()
