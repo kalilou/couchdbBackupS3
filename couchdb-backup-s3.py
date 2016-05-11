@@ -38,6 +38,9 @@ class CouchUtilWrapper(object):
 
         Basic usage (assuming you have the config file setup and the aws credential and config files)
             >>> python couchdb-backup-s3 couchdb_backup config.json
+            >>> python couchdb-s3-backup.py restore_backup 00-Wednesday-couchdb-2016-05-11.tar.gz
+
+        Important note: 00-Wednesday-couchdb-2016-05-11.tar.gz should be taken from the s3
     """
 
     def __init__(self, config=None):
