@@ -53,3 +53,44 @@ Since we are using aws api via python package boto3, you will need to setup the 
 aws_access_key_id = Your-aws-access-key-id
 aws_secret_access_key = Your-aws-secret-access-key
 ```
+
+* Create config file under ~/.aws/config
+```
+[default]
+region=your-region
+output=json
+```
+
+Make sure the aws user has the iam policy to write, read and download from the s3
+- Example of s3 iam policy
+
+```json
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:ListAllMyBuckets"
+         ],
+         "Resource":"arn:aws:s3:::*"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:ListBucket",
+         ],
+         "Resource":"arn:aws:s3:::examplebucket"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:PutObject",
+            "s3:GetObject",
+         ],
+         "Resource":"arn:aws:s3:::examplebucket/*"
+      }
+   ]
+}
+
+```
