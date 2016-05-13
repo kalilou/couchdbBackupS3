@@ -5,7 +5,7 @@
 
     couchdb-backup-s3 is a simple python code for a couchdb rotational backup to s3
 
-    :copyright: (c) 2016 by Tripwell Sweden AB.
+    :copyright: (c) 2016 by Kalilou Diaby.
     :license: Not decided  yet
 """
 
@@ -47,7 +47,7 @@ class CouchUtilWrapper(object):
         config = config or {}
         self.rotation_max = config.get('rotation_max', 7)
         self.bucket_name = config.get('s3-bucket-name', 'couch-backup-bucket')
-        self.couchdb_file_path = config.get('file_path', '/opt/tripwell/data/couchdb')
+        self.couchdb_file_path = config.get('file_path', '/var/lib/couchdb')
 
         redis_config = config.get('redis', {})
         self.redis_db = redis_config.get('db', 0)

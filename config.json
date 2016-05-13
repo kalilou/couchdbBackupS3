@@ -1,7 +1,7 @@
 {
     "rotation_max": 7,
     "s3-bucket-name": "couch-backup-bucket",
-    "file_path": "/opt/tripwell/data/couchdb",
+    "file_path": "path_to_couchdb_db_files",
     "redis": {
       "rotation_key": "rotation_redis_key",
       "host": "localhost",

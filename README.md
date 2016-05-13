@@ -1,6 +1,5 @@
 # couchdb-backup-s3
 
-## Tripwell use case
 
 ## How it works
 `couchdb-backup-3` is a program that can be run manually or as crontab to
@@ -24,7 +23,7 @@ But before you can run it, you need to have the config.json file i.e:
 {
     "rotation_max": 7,
     "s3-bucket-name": "couch-backup-bucket",
-    "file_path": "/opt/tripwell/data/couchdb",
+    "file_path": "path_to_couchdb_db_files",
     "redis": {
       "rotation_key": "rotation_redis_key",
       "host": "localhost",
